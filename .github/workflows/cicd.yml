@@ -1,0 +1,26 @@
+name: "This Is Just Simple Pipeline"
+
+on:
+  push:
+    branches:
+        - main
+  pull_request:
+    branches:
+         - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        setps:
+          - name: checkout Code
+            uses: actions/checkout@v3
+          - name: Install NPM
+            run: npm install 
+          - name: npm test
+            run: npm test
+          - name: LAST STATUS
+            run: echo "This TEst is done"
+
+
+
